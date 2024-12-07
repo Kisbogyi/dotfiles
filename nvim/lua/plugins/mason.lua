@@ -5,7 +5,7 @@ return {
 		{'neovim/nvim-lspconfig' },
 	},
 	opts = {
-		ensure_installed = { 
+		ensure_installed = {
 			"lua_ls",
 			"ruff",
 			"rust_analyzer",
@@ -16,6 +16,19 @@ return {
 			end,
            ["rust_analyzer"] = function ()
            end,
+
+            require ("lspconfig").ruff.setup({
+                trace = 'message',
+                init_options = {
+                    settings = {
+                        logLevel = 'debug',
+                    },
+                },
+                keys = {
+                    "<leader>co"
+                    
+                }
+            })
 		},
 	},
 }
