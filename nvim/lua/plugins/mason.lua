@@ -7,7 +7,7 @@ return {
 	opts = {
 		ensure_installed = { 
 			"lua_ls",
-			"ruff_lsp",
+			"ruff",
 			"rust_analyzer",
 		},
 		handlers = {
