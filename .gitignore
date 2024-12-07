@@ -1,1 +1,13 @@
-./*
+*    
+!*/
+JetBrains
+updater
+
+# track this file
+
+!.gitignore
+
+# whitelist folders
+
+!nvim/
+!tmux/
