@@ -1,0 +1,17 @@
+{
+    "chat.commandCenter.enabled": false,
+    "editor.fontFamily": "BlexMono Nerd Font",
+    "editor.fontSize": 12,
+    "workbench.activityBar.location": "hidden",
+    "workbench.statusBar.visible": false,
+    "editor.minimap.enabled": false,
+    "workbench.editor.showTabs": "none",
+    "editor.renderLineHighlight": "line", //change it to block highlight
+    "workbench.colorCustomizations": {
+        "editor.lineHighlightBackground": "#75757523"
+    },
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.guides.indentation": false,
+    "git.openRepositoryInParentFolders": "never"
+}
