@@ -72,18 +72,9 @@ export PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 # Path plus elements
-path+=('/home/bandi/Tools/zig/zig-linux-x86_64-0.11.0/')
-	# path+=('/home/bandi/.local/bin/')
-
-path+=('/usr/local/sicstus4.9.0/bin/')
+# path+=('/home/bandi/.local/bin/')
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,17 +111,17 @@ alias docker=podman
 alias lxc-run="systemd-run --unit=my-unit --user --scope -p "Delegate=yes" -- lxc-start"
 alias lxc-ls="lxc-ls --fancy"
 
-. "$HOME/.asdf/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-
-. "$HOME/.local/bin/env"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
 
 __GL_THREADED_OPTIMIZATIONS=0
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+
