@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 autoload -U colors && colors
 
 # Prompt
-export PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}$ "
+export PS1="%{$fg[green]%}%~%{$reset_color%} $ "
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -68,6 +68,12 @@ export PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=500000
+SAVEHIST=500000
+setopt appendhistory
+setopt INC_APPEND_HISTORY  
+setopt SHARE_HISTORY
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -75,8 +81,6 @@ export PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[green]%}%~%{$reset_color%}
 
 # Path plus elements
 # path+=('/home/bandi/.local/bin/')
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -116,12 +120,23 @@ autoload -Uz compinit && compinit
 
 autoload -U +X bashcompinit && bashcompinit
 
-__GL_THREADED_OPTIMIZATIONS=0
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins=( 
+    # other plugins...
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    sudo
+    # zsh-autocomplete
+)
+
+# export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+bindkey -M emacs '\es' sudo-command-line
+bindkey -M vicmd '\es' sudo-command-line
+bindkey -M viins '\es' sudo-command-line
 

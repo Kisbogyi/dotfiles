@@ -1,11 +1,12 @@
 local global = vim.g
+
 local o = vim.o
 
 vim.scriptencoding = "utf-8"
 
 o.number = true -- Print the line number in front of each line
 o.undofile = true
-o.undodir = "/home/bandi/.nvim/undodir"
+o.undodir = '/home/andras/.nvim/undodir'
 o.relativenumber = true
 o.wrap = false
 o.colorcolumn = '80'
@@ -30,7 +31,10 @@ vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration)
 
 vim.keymap.set('n', '<leader>-', vim.cmd.Oil)
 
+
+vim.api.nvim_set_keymap('t', '<leader>\\', [[<C-\><C-n>]], { noremap = true })
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-
+vim.diagnostic.config { virtual_lines = true }

@@ -22,6 +22,12 @@ if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
+
+# if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete ]; then
+# 	echo "Installing zsh-autocomplete"
+#     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+# fi
+
 if [ -f ~/.zshrc ] && [ ! -L ~/.zshrc ]; then
 	echo "backing up ~/.zshrc to ~/.zshrc.bak"
 	mv "~/.zshrc"  "~/.zshrc.bak"
@@ -34,3 +40,8 @@ if [ ! -L ~/.zshrc ]; then
 fi
 
 
+if [ ! -d ~/.config/tmux ]; then
+    mv -f ~/.config/tmux ~/.config/tmux.bak
+    echo "xd"
+    ln -s "$PWD/tmux" ~/.config/tmux
+fi
