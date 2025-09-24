@@ -1,0 +1,5 @@
+root = true
+
+[*.lua]
+indentation_style = space
+indent_size = 2
